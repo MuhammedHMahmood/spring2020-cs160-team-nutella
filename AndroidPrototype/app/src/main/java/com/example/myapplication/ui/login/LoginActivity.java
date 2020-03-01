@@ -118,7 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
-                goToMainMenu();
+                goToMainActivity();
 
 
             }
@@ -128,8 +128,8 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void goToMainMenu() {
-        Intent intent = new Intent(this, MainMenu.class);
+    private void goToMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

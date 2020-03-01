@@ -10,19 +10,29 @@ import android.os.Bundle;
 
 import com.example.myapplication.R;
 
-public class MainMenu extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener(){
+        Button cater = (Button) findViewById(R.id.button1);
+        cater.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 goToSecondActivity();
+            }
+        });
+
+        Button eat = (Button) findViewById(R.id.button2);
+        //eat.setBottom(50);
+        eat.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                gotToThirdActivity();
             }
         });
     }
@@ -31,4 +41,11 @@ public class MainMenu extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
+
+    private void gotToThirdActivity()
+    {
+        Intent intent = new Intent(this, ThirdActivity.class);
+        startActivity(intent);
+    }
+
 }
