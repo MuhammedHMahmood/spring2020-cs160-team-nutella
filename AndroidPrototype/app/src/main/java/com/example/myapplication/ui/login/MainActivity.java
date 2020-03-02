@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 
 import com.example.myapplication.R;
@@ -17,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button cater = (Button) findViewById(R.id.button1);
+
+        ImageButton cater = (ImageButton) findViewById(R.id.imageButton2);
         cater.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -26,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button eat = (Button) findViewById(R.id.button2);
-        //eat.setBottom(50);
+        ImageButton eat = (ImageButton) findViewById(R.id.imageButton3);
         eat.setOnClickListener(new View.OnClickListener(){
 
             @Override
