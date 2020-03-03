@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        ImageButton cater = (ImageButton) findViewById(R.id.imageButton2);
-        cater.setOnClickListener(new View.OnClickListener(){
+        ImageButton eat = (ImageButton) findViewById(R.id.imageButton2);
+        eat.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton eat = (ImageButton) findViewById(R.id.imageButton3);
-        eat.setOnClickListener(new View.OnClickListener(){
+        ImageButton cater = (ImageButton) findViewById(R.id.imageButton3);
+        cater.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {

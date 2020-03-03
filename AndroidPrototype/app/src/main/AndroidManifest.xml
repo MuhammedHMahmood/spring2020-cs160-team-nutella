@@ -19,13 +19,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.login.SecondActivity"
-            android:label="@string/title_activity_second"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.login.MainActivity">
 
         </activity>
+        <activity
+        android:name=".ui.login.SecondActivity"
+        android:label="@string/title_activity_second"
+        android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ui.login.ThirdActivity"
+            android:label="@string/title_activity_third"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
     </application>
 
 </manifest>

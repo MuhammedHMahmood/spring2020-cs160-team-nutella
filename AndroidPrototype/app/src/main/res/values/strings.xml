@@ -15,4 +15,5 @@
     <string name="welcom_to_eating">Welcom to Eating</string>
     <string name="todo">TODO</string>
     <string name="todo2">TODO</string>
+    <string name="title_activity_third">ThirdActivity</string>
 </resources>
