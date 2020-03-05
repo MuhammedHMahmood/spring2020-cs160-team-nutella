@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.login;
+package com.example.myapplication.data.eat;
 
 import android.os.Bundle;
 
@@ -16,7 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class SecondActivity extends AppCompatActivity {
+public class EatActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
