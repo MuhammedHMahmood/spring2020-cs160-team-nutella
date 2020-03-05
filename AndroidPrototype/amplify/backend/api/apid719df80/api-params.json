@@ -1,0 +1,37 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "AndroidAmplify",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST"
+                ]
+            }
+        }
+    ],
+    "resourceName": "apid719df80",
+    "apiName": "apid719df80",
+    "functionArns": [
+        {
+            "lambdaFunction": "AndroidAmplify"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-androidprototype-android-14004-authRole",
+        "unAuthRoleName": "amplify-androidprototype-android-14004-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "AndroidAmplify",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
