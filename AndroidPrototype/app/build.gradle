@@ -11,6 +11,14 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    dependencies {
+        implementation 'com.amplifyframework:core:0.9.1'
+        implementation 'com.amplifyframework:aws-api:0.9.1'
+    }
     buildTypes {
         release {
             minifyEnabled false
