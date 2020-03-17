@@ -50,8 +50,8 @@ dependencies {
     implementation('com.amazonaws:aws-android-sdk-auth-ui:2.8.+@aar') { transitive = true }
 // plz god help
     //implementation('com.amazonaws:aws-android-sdk-apigateway-core:2.8.+@aar') { transitive = true }
-    implementation 'com.amplifyframework:core:0.9.1'
-    implementation 'com.amplifyframework:aws-api:0.9.1'
+    //implementation 'com.amplifyframework:core:0.9.1'
+    //implementation 'com.amplifyframework:aws-api:0.9.1'
     implementation 'com.amazonaws:aws-android-sdk-apigateway-core:2.16.8'
 
 }

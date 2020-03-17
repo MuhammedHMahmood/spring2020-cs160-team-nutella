@@ -13,29 +13,29 @@
  * permissions and limitations under the License.
  */
 
-package apid719df80.model;
+package myAPI.model;
 
 
-public class ResponseSchema {
-    @com.google.gson.annotations.SerializedName("response")
-    private String response = null;
+public class RequestSchema {
+    @com.google.gson.annotations.SerializedName("request")
+    private String request = null;
 
     /**
-     * Gets response
+     * Gets request
      *
-     * @return response
+     * @return request
      **/
-    public String getResponse() {
-        return response;
+    public String getRequest() {
+        return request;
     }
 
     /**
-     * Sets the value of response.
+     * Sets the value of request.
      *
-     * @param response the new value
+     * @param request the new value
      */
-    public void setResponse(String response) {
-        this.response = response;
+    public void setRequest(String request) {
+        this.request = request;
     }
 
 }

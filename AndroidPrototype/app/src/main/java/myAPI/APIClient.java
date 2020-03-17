@@ -13,14 +13,11 @@
  * permissions and limitations under the License.
  */
 
-package apid719df80;
-
-import java.util.*;
-
+package myAPI;
 
 
 @com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://jznwykwq08.execute-api.us-west-2.amazonaws.com/android")
-public interface ApiddfClient {
+public interface APIClient {
 
 
     /**
