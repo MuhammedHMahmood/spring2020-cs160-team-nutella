@@ -1,7 +1,0 @@
-{
-    "tableName": "users",
-    "partitionKeyName": "phone",
-    "partitionKeyType": "N",
-    "sortKeyName": "Address",
-    "sortKeyType": "S"
-}

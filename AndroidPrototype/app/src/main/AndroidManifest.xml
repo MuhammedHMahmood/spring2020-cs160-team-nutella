@@ -10,32 +10,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".AuthenticationActivity"
-            android:noHistory="true">
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
+        <activity android:name=".data.menu.MainActivity">
 
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>-->
-        <activity android:name=".data.menu.MainActivity"></activity>
+        </activity>
         <activity
-            android:name=".data.eat.EatActivity"
-            android:label="@string/title_activity_second"
-            android:theme="@style/AppTheme.NoActionBar" />
+        android:name=".data.eat.EatActivity"
+        android:label="@string/title_activity_second"
+        android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".data.cater.CaterActivity"
             android:label="@string/title_activity_third"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
     </application>
 
 </manifest>
