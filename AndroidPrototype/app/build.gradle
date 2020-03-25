@@ -11,11 +11,14 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+<<<<<<< HEAD
     compileOptions {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
 
+=======
+>>>>>>> parent of d2f5942... f
     buildTypes {
         release {
             minifyEnabled false
