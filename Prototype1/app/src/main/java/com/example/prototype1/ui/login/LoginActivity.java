@@ -27,6 +27,8 @@ import com.example.prototype1.R;
 import com.example.prototype1.ui.login.LoginViewModel;
 import com.example.prototype1.ui.login.LoginViewModelFactory;
 
+import com.example.prototype1.ui.login.RegisterActivity;
+
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
@@ -44,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         final Button registerButton = findViewById(R.id.register);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
+        registerButton.setEnabled(true);
+
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
             public void onChanged(@Nullable LoginFormState loginFormState) {
@@ -57,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (loginFormState.getPasswordError() != null) {
                     passwordEditText.setError(getString(loginFormState.getPasswordError()));
                 }
+
             }
         });
 
@@ -123,6 +128,7 @@ public class LoginActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loadingProgressBar.setVisibility(View.VISIBLE);
                 goToRegisterActivity();
             }
         });
