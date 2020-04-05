@@ -10,7 +10,8 @@ var http           = require('http'),
     notifier       = require('./server/notifier'),
     restful        = require('./server/bookshelf_rest'),
     auth           = require('./server/auth')(models),
-    force          = require('./server/force')
+    force          = require('./server/force'),
+    mongoose = require("mongoose")
     ;
 
 /********************* APP SETUP *****************************/
@@ -34,6 +35,17 @@ app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'client/')));
 app.use(express.static(path.join(__dirname, 'admin/')));
 app.use(express.static(path.join(__dirname, 'server/pages')));
+
+//moongodb connection
+mongoose.connect('mongodb+srv://Nutella:NutellaPass@cluster0-7zxfk.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+
+var USER_COLLECTION = "Users";
+var DISH_COLLECTION = "Dishes";
+var ORDER_COLLECTION = "Orders";
+
+const route = require('./routes/route');
+app.use(route);
+
 
 // Logging
 app.use(function(req, res, next) {
