@@ -7,12 +7,9 @@ const Order = require('../models/orders')
 
 
 /*
-  Retrieves a list of dishes according to search criteria based on a key word and limiting number of searches
+  Retrieves a list of dishes
   Body:
-  {
-    “keyword”: string
-    “limit”: integer
-  }
+  Nothing
   Response: array of documents from dishes that match the search
   [{
     all information about dishes
@@ -20,37 +17,23 @@ const Order = require('../models/orders')
   }]
 */
 router.get('/dishes', function(req, res) {
-  console.log(req.body.keywords);
-  var results = Dish.find({
-    $or: [{
-      name: {
-        $regex: req.body.keyword
-      }
-    }, {
-      description: {
-        $regex: req.body.keyword
-      }
-    }, {
-      ingredients: {
-        $elemMatch: {
-          $regex: req.body.keyword
-        }
-      }
-    }]
-  }, {}, function(err, docs) {
-    if (err) {
-      console.log("Throws error");
-      res.send({
-        message: "error"
-      });
-    } else if (!docs) {
-      console.log("No dish found");
-      res.json(docs);
-    } else {
-      console.log(docs);
-      res.json(docs);
-    };
-  }).limit(req.body.range);
+  //console.log(req.body.keywords);
+  //try {
+    var results = Dish.find({}, function(err, docs) {
+      if (err) {
+        console.log("Throws error");
+        res.send({
+          message: "error"
+        });
+      } else if (!docs) {
+        console.log("No dish found");
+        res.json(docs);
+      } else {
+        console.log(docs);
+        res.json(docs);
+      };
+    });
+
 })
 
 /*

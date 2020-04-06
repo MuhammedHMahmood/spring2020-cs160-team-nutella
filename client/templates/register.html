@@ -4,6 +4,12 @@
     <!--<a class="button button-clear" href="#/app/signup">Signup</a>-->
     <!--</ion-nav-buttons>-->
 
+
+    “username”: string
+    "name" : string
+    “password”: string
+    “address”: string
+
     <ion-content has-header="true" padding="true">
 
         <div class="list list-inset" style="margin-top: 10px;">
@@ -22,6 +28,10 @@
 
             <label class="item item-input">
                 <input type="password" placeholder="Re-enter password" ng-model="user.password2">
+            </label>
+
+            <label class="item item-input">
+                <input type="text" placeholder="Address" ng-model="user.address">
             </label>
 
             <button class="button button-block button-stable" ng-click="register()">

@@ -36,9 +36,11 @@ app.use(express.static(path.join(__dirname, 'admin/')));
 app.use(express.static(path.join(__dirname, 'server/pages')));
 
 //moongodb connection
-mongoose.connect('mongodb+srv://Nutella:NutellaPass@cluster0-7zxfk.mongodb.net/test?retryWrites=true&w=majority', {
-  useNewUrlParser: true
-});
+setTimeout(function() {
+  mongoose.connect('mongodb+srv://Nutella:NutellaPass@cluster0-7zxfk.mongodb.net/test?retryWrites=true&w=majority', {
+    useNewUrlParser: true
+  }, () => console.log("success connect")) }, 60);
+
 
 var USER_COLLECTION = "Users";
 var DISH_COLLECTION = "Dishes";
