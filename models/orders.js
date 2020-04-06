@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 
 const OrderSchema = mongoose.Schema({
-  Seller:{ //id
+  Seller: { //id
     type: String,
     required: true
   },
-  Buyer:{ //id
+  Buyer: { //id
     type: String,
     required: true
   },
   Dishes: //array of dish ids
   {
-    type: String[],
+    type: [String],
     required: true
   },
   Price: {
@@ -22,11 +22,11 @@ const OrderSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  Status:{
+  Status: {
     type: String,
     required: true
   }
-}) ;
+});
 
 
 module.exports = mongoose.model('Orders', OrderSchema)

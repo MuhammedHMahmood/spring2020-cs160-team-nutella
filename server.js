@@ -1,18 +1,17 @@
-var http           = require('http'),
-    config         = require('./server/config'),
-    express        = require('express'),
-    bodyParser     = require('body-parser'),
-    methodOverride = require('method-override'),
-    path           = require('path'),
-    knex           = require('knex')(config.knex_options),
-    bookshelf      = require('bookshelf')(knex),
-    models         = require('./server/models')(bookshelf),
-    notifier       = require('./server/notifier'),
-    restful        = require('./server/bookshelf_rest'),
-    auth           = require('./server/auth')(models),
-    force          = require('./server/force'),
-    mongoose = require("mongoose")
-    ;
+var http = require('http'),
+  config = require('./server/config'),
+  express = require('express'),
+  bodyParser = require('body-parser'),
+  methodOverride = require('method-override'),
+  path = require('path'),
+  knex = require('knex')(config.knex_options),
+  bookshelf = require('bookshelf')(knex),
+  models = require('./server/models')(bookshelf),
+  notifier = require('./server/notifier'),
+  restful = require('./server/bookshelf_rest'),
+  auth = require('./server/auth')(models),
+  force = require('./server/force'),
+  mongoose = require("mongoose");
 
 /********************* APP SETUP *****************************/
 
@@ -37,7 +36,9 @@ app.use(express.static(path.join(__dirname, 'admin/')));
 app.use(express.static(path.join(__dirname, 'server/pages')));
 
 //moongodb connection
-mongoose.connect('mongodb+srv://Nutella:NutellaPass@cluster0-7zxfk.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://Nutella:NutellaPass@cluster0-7zxfk.mongodb.net/test?retryWrites=true&w=majority', {
+  useNewUrlParser: true
+});
 
 var USER_COLLECTION = "Users";
 var DISH_COLLECTION = "Dishes";
@@ -61,7 +62,7 @@ app.use(function(err, req, res, next) {
 
 /********************* ROUTES *****************************/
 // Simple hack to only allow admin to load the admin page.
-app.get('/admin', auth.authenticate, auth.require_admin, function (req, res) {
+app.get('/admin', auth.authenticate, auth.require_admin, function(req, res) {
   res.set('Location', '/admin_Ypzr9fLs.html');
   return res.send('OK');
 });
