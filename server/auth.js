@@ -65,6 +65,7 @@ module.exports = function(models) {
       console.log("got an error")
       res.send(err);
     }
+
   /*  new models.User({
       email: user.email
     }).fetch().then(function(model) {
@@ -92,9 +93,8 @@ module.exports = function(models) {
     }); */
   }
 
-  function login(req, res, next)
+  function login(req, res, next) {
     var user = req.body;
-
     new models.User({
       email: user.email
     }).fetch().then(function(model) {

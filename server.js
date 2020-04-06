@@ -69,7 +69,6 @@ app.get('/admin', auth.authenticate, auth.require_admin, function(req, res) {
   return res.send('OK');
 });
 
-
 app.use('/register', auth.register);
 app.use('/login', auth.login);
 

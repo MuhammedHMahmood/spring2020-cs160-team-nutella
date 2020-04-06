@@ -52,13 +52,21 @@ Response:
 router.post('/users', function(req, res) {
   const user = new User({
     Name: req.body.name,
-    Account: req.body.username,
+    Account: req.body.email,
     Password: req.body.password,
     Location: req.body.address,
     Type: "Buyer"
   });
 
-  console.log(user);
+  if (!validator.isEmail(user.Account)) {
+    return res.status(400).send("Invalid email address");
+  }
+  if (!validator.isLength(user.Name, 3)) {
+    return res.status(400).send("Name must be at least 3 characters");
+  }
+  if (!validator.isLength(user.Password, 3)) {
+    return res.status(400).send("Password must be at least 3 characters");
+  }
 
   try {
     user.save();
@@ -66,6 +74,12 @@ router.post('/users', function(req, res) {
   } catch (err) {
     res.send(err);
   }
+})
+
+
+router.get('/users', function(req, res) {
+  console.log("user login page");
+  return res.location("/users")
 })
 
 /*
