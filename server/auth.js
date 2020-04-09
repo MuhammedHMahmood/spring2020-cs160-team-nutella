@@ -1,5 +1,4 @@
-var bcrypt = require('bcrypt'),
-  uuid = require('node-uuid'),
+  var uuid = require('node-uuid'),
   validator = require('validator'),
   mongoose = require('mongoose');
 
@@ -7,28 +6,6 @@ var user_cache = {};
 var register_callback = null;
 
 const User = require('../models/users')
-
-function encryptPassword(password, callback) {
-  bcrypt.genSalt(10, function(err, salt) {
-    if (err) {
-      return callback(err);
-    }
-    bcrypt.hash(password, salt, function(err, hash) {
-      return callback(err, hash);
-    });
-  });
-}
-
-function comparePassword(password, hash, callback) {
-  console.log("Comparing ", password, " to hash ", hash);
-  bcrypt.compare(password, hash, function(err, match) {
-    if (err) {
-      return callback(err);
-    } else {
-      return callback(null, match);
-    }
-  });
-}
 
 module.exports = function(models) {
   function clean_user(user) {
