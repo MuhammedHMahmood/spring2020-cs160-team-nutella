@@ -1,5 +1,5 @@
 {
-  "name": "quizlive",
+  "name": "momskitchen",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -27,12 +27,5 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "load_questions": "node server/load_questions.js"
   },
-  "author": {
-    "name": "Scott Persinger",
-    "email": "scottp@heroku.com",
-    "url": "https://twitter.com/persingerscott"
-  },
-  "repository": "https://github.com/heroku/mobile-template1",
-  "homepage": "https://github.com/heroku/mobile-template1",
   "license": "MIT"
 }

@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('QuizCtrl', function($scope, $ionicPopup, $ionicLoading, SocketIO, Question, Answer, 
+.controller('QuizCtrl', function($scope, $ionicPopup, $ionicLoading, SocketIO, Question, Answer,
                                  AuthenticationService, RegistrationService, UserResponse) {
   $scope.q = {};
   $scope.q.answers = ['one', 'two', 'three'];
@@ -18,7 +18,7 @@ angular.module('starter.controllers', [])
   $scope.correct_answer = null;
   $scope.answerIndex = false;
   $scope.is_admin = AuthenticationService.isAdmin;
-  
+
   $scope.hasAnswered = function() {
     // Has the user answered the current question already?
     return UserResponse.get($scope.q.id) !== undefined;
@@ -169,6 +169,7 @@ angular.module('starter.controllers', [])
   }
 
 })
+
 
 .controller('LeadersCtrl', function($scope, SocketIO, Answer) {
   $scope.leaders = Answer.leaders();

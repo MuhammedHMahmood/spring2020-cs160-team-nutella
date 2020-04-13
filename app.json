@@ -1,6 +1,6 @@
 {
-  "name": "QuizLive Mobile Template",
-  "description": "Heroku mobile app template using Node and AngularJS",
+  "name": "momskitchen",
+  "description": "App for Mom's Kitchen - CS160 Project",
   "repository": "https://github.com/heroku/mobile-template1",
   "logo": "https://node-js-sample.herokuapp.com/node.svg",
   "keywords": ["node", "express", "angularjs","ionic","force.com"],
