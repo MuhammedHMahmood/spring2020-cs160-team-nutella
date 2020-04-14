@@ -8,7 +8,7 @@ const Order = require('../models/orders')
 
 
 router.get('/', function(req, res){
-  res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/index.html')
+  res.sendFile('/views/index.html', {'root': './public'});
 })
 
 
@@ -24,7 +24,7 @@ Response:
  if success -> nothing
 }*/
 router.get('/login', function(req, res){
-  res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/login.html')
+  res.sendFile('/views/login.html', {'root': './public'});
 })
 
 
@@ -37,7 +37,8 @@ router.post('/login', function(req, res){
       } else if (!docs || docs === []){
         console.log("Password or username (email id) incorrect");
         res.status(401)
-        res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/login.html')
+        //res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/login.html')
+        res.sendFile('/views/login.html', {'root': './public'});
       }
       else {
         console.log(docs);
@@ -50,7 +51,8 @@ router.post('/login', function(req, res){
 
 
 router.get('/users', function(req, res){
-res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/register.html')
+    res.sendFile('/views/register.html', {'root': './public'});
+///res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/register.html')
 })
 
 
@@ -120,7 +122,8 @@ var results = Dish.find({_id : req.params.dishId },function(err, docs) {
 
 
 router.get('/users/:userId', function(req, res) {
-res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/userMainPage.html')
+  res.sendFile('/views/userMainPage.html', {'root': './public'});
+//res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/userMainPage.html')
 })
 
 /*
@@ -219,7 +222,8 @@ router.get('/dishes', function(req, res){
           console.log(docs);
           res.send(docs)
           //res.send({ result: docs});
-          res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/dishes.html')
+            res.sendFile('/views/dishes.html', {'root': './public'});
+          //res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/dishes.html')
         };
       });
 })
