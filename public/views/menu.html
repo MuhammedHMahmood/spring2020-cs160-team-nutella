@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="http://localhost:3000/css/style.css" rel="stylesheet">
+  <script>
+    var baseUrl = "http://localhost:3000";
+
+    function loadDishes() {
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", baseUrl + "/dishes", true);
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+          var dishes = JSON.parse(xmlhttp.responseText);
+
+          function dishesToHtmlDiv(dish) {
+            return `
+            <div class="dish">
+              <img class=dishPhoto src="${dish.Picture}">
+              <h2>${dish.Name}</h2>
+              <p>${dish.Description}</p>
+              <p>Now being delivered from ${dish.Zipcode} within a 5 mile radius</p>
+            </div> `
+          }
+
+          document.getElementById("DisplayDishes").innerHTML = `
+          <h1>Dishes on our Menu - ${dishes.length} Dishes</h1>
+          ${dishes.map(dishesToHtmlDiv).join('')}
+          <p class='footer'> Check back for more updates! </p>
+          `; //closing for the innerhtml of display dishes
+        }
+      };
+      xmlhttp.send();
+    }
+
+    window.onload = function() {
+      loadDishes();
+    }
+  </script>
+</head>
+
+<body>
+  <div id="DisplayDishes"> Food</div>
+</body>
+
+</html>

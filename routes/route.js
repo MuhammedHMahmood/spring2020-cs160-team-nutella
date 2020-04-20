@@ -37,14 +37,12 @@ router.post('/login', function(req, res){
       } else if (!docs || docs === []){
         console.log("Password or username (email id) incorrect");
         res.status(401)
-        //res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/login.html')
         res.sendFile('/views/login.html', {'root': './public'});
       }
       else {
         console.log(docs);
         res.status(200)
         res.redirect("/users/"+docs._id);
-        //res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/userMainPage.html')
       };
   });
 })
@@ -52,7 +50,6 @@ router.post('/login', function(req, res){
 
 router.get('/users', function(req, res){
     res.sendFile('/views/register.html', {'root': './public'});
-///res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/register.html')
 })
 
 
@@ -82,7 +79,6 @@ console.log(user);
 
 try {
   user.save();
-  //res.send(user._id);
   res.redirect("/users/"+user._id);
 }
 catch(err){
@@ -90,40 +86,9 @@ catch(err){
 }
 })
 
-/*
-Gets information on a specific dish
-Note: this is semi redundant with /users/id/dish/dishID but this interface is just for searching, not for management
-Body:
-{
-“userID”: integer
-“name”: string
-“picture”: jpg
-“description”: string
-“rating”: float
-“ingredients”: string
-“zipcode”: integer
-}*/
-router.get('/dishes/:dishId', function(req, res){
-var results = Dish.find({_id : req.params.dishId },function(err, docs) {
-    if(err) {
-        console.log("Throws error");
-        console.log(err);
-        res.send({message: "error"})
-    } else if (!docs){
-      console.log("No dish found");
-      res.json(docs)
-    }
-    else {
-      console.log(docs);
-        res.json(docs)
-    };
-});
-})
-
 
 router.get('/users/:userId', function(req, res) {
   res.sendFile('/views/userMainPage.html', {'root': './public'});
-//res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/userMainPage.html')
 })
 
 /*
@@ -149,7 +114,6 @@ var results = Dish.find({Userid : req.params.userId },function(err, docs) {
         res.json(docs)
     };
 });
-
 })
 
 /*
@@ -212,21 +176,53 @@ router.get('/dishes', function(req, res){
           res.send({
             message: "error"
           });
-          //res.redirect(backURL);
         } else if (!docs) {
           console.log("No dish found");
           res.json(docs);
-        //  res.redirect(backURL);
         } else {
           console.log({ result: docs })
           console.log(docs);
           res.send(docs)
-          //res.send({ result: docs});
-            res.sendFile('/views/dishes.html', {'root': './public'});
-          //res.sendFile('/Users/admin/Desktop/MomKitchenProject/FrontEnd/views/dishes.html')
+          res.sendFile('/views/menu.html', {'root': './public'});
         };
       });
 })
 
+
+/*
+Gets information on a specific dish
+Note: this is semi redundant with /users/id/dish/dishID but this interface is just for searching, not for management
+Body:
+{
+“userID”: integer
+“name”: string
+“picture”: jpg
+“description”: string
+“rating”: float
+“ingredients”: string
+“zipcode”: integer
+}*/
+router.get('/dishes/:dishId', function(req, res){
+var results = Dish.find({_id : req.params.dishId },function(err, docs) {
+    if(err) {
+        console.log("Throws error");
+        console.log(err);
+        res.send({message: "error"})
+    } else if (!docs){
+      console.log("No dish found");
+      res.json(docs)
+    }
+    else {
+      console.log(docs);
+        res.json(docs)
+    };
+});
+})
+
+
+
+router.get('/menu', function(req, res){
+  res.sendFile('/views/menu.html', {'root': './public'});
+})
 
 module.exports = router;
