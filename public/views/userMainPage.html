@@ -5,17 +5,41 @@
 
   <meta charset="utf-8">
   <link href="http://localhost:3000/css/style.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.lowerLeft {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  transform: translate(60%,10%);
+}
+</style>
+
 </head>
 
 <body>
 
-
-  <div class="images">
+  <div class="container">
     <a href="/">
-      <img class="logo" src="http://localhost:3000/images/cooking.jpg" name="Catering" alt="Cater" width="600" height="600" /></a>
-    <a href="/" target="_blank">
-      <img class="logo" src="http://localhost:3000/images/delivery.jpg" name="Order" alt="Order" width="600" height="600" /></a>
+      <img src="http://localhost:3000/images/cooking.jpg" name="Catering" alt="Cater" style="width:75%;">
+      <div class="lowerLeft">  <p style="font-size: 70px"> Cater </p> </div>
+    </a>
   </div>
+
+  <div class="container">
+    <a href="/" target="_blank">
+    <img src="http://localhost:3000/images/delivery.jpg" name="Order" alt="Order" style="width:75%;">
+    <div class="lowerLeft"><p style="font-size: 70px"> Order </p></div>
+    </a>
+  </div>
+
 
   <div class="bar bar-footer bar-balanced" style="bottom:50px" ng-show="List of Dishes">
     <div class="title"><a href="/menu" target="_blank">Get list of dishes</a></div>
