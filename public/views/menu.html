@@ -18,10 +18,10 @@
           function dishesToHtmlDiv(dish) {
             return `
             <div class="dish">
-              <img class=dishPhoto src="${dish.Picture}">
+              <img class=dishPhoto src="${dish.Picture}" width = "600" height = "400">
               <h2>${dish.Name}</h2>
               <p>${dish.Description}</p>
-              <p>Now being delivered from ${dish.Zipcode} within a 5 mile radius</p>
+              <p>Now being delivered from zipcode: ${dish.Zipcode} within a 5 mile radius</p>
             </div> `
           }
 
