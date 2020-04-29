@@ -1,4 +1,4 @@
-const text = "qwerty7";
+var text = "";
 
 describe("Form test", () => {
   it("Can fill the form", () => {
@@ -15,7 +15,7 @@ describe("Form test", () => {
 
     cy.get('input[name="psw"]')
       .type("qwerty7")
-      .should("have.value", "qwerty7");
+      .should("have.value", text = "qwerty7");
 
       cy.get('input[name="psw-repeat"]')
       .type("qwerty7")
