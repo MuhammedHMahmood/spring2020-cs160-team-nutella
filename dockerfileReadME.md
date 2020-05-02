@@ -1,4 +1,4 @@
-# Using the dockerfile
+# Using the dockerfile with docker desktop
 
 First cd into the directory with the Dockerfile.
 
@@ -24,3 +24,12 @@ $ docker ps
 $ docker logs <container-id>
 ```
 6. Open your browser and go to localhost:3000. Your app should be running
+
+
+## Screenshots
+
+### Terminal
+![Screenshot 2020-05-01 at 6 23 02 PM](https://user-images.githubusercontent.com/34850576/80851905-5648d800-8bd9-11ea-8cfa-038f26c8cc28.png)
+
+### Application running on port 3000
+![Screenshot 2020-05-01 at 3 49 04 PM](https://user-images.githubusercontent.com/34850576/80851907-5943c880-8bd9-11ea-87ab-60e5d03ecf48.png)
