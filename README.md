@@ -40,18 +40,23 @@ User Home Page
 
 ## FAQ
 I forgot my password, what do I do?
+
 Mom’s Kitchen currently, does not support a password reset. You will need to create a new account with a new password.
 
 I forgot what email I used, what do I do?
+
 Create a new account with an email of your choice and a different password. 
 
 Where can I view dishes in my area?
+
 On the home page, there is a button you can press to that will lead you to a page full of dishes in your area. If you have logged in, there is a link in the top left that will take you to the same page.
 
 Is Mom’s Kitchen free?
+
 Yes, Mom’s Kitchen is completely free to use. But you have to pay for the food. :)
 
 I found an issue with Mom’s Kitchen, where do I report it?
+
 Reach out to one of the developers via email. We’re sorry for the inconvenience and will work to resolve the issue as soon as possible.
 
 ## Authors
