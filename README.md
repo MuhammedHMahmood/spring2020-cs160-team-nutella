@@ -49,7 +49,7 @@ User Home Page
 
 3) Where can I view dishes in my area?
 
-   On the home page, there is a button you can press to that will lead you to a page full of dishes in your area. If you have logged in,        there is a link in the top left that will take you to the same page.
+   On the home page, there is a button you can press to that will lead you to a page full of dishes in your area. If you have logged in,        there is a link on the top left side that will take you to there.
 
 4) Is Mom’s Kitchen free?
 
