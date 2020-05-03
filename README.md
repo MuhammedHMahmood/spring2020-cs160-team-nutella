@@ -73,7 +73,7 @@ Cypress Testing: Michael Wong
 
 Postmate Testing: Ipsita Deshmukh
 
-Docker: Ipsita Deshmukh 
+Docker Image: Ipsita Deshmukh 
 
 ## Links 
 
