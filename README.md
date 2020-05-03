@@ -41,8 +41,15 @@ User Home Page
 ## FAQ
 
 ## Authors
+Ipsita Deshmukh, Muhammed Hassan Mahmood, Michael Wong, Zegang Zhang, Scott Dawson
 
 ## Credits
+Front End: Muhammed Hassan Mahmood & Michael Wong 
+Back End: Ipsita Deshmukh & Scott Dawson
+Data Base: Zegang Zhang
+Cypress Testing: Michael Wong
+Postmate Testing: Ipsita Deshmukh
+Docker: Ipsita Deshmukh 
 
 ## Links 
 
