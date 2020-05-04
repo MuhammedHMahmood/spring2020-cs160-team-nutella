@@ -34,7 +34,11 @@ We bring to consumers home cooked, authentic food made by small scale caterers o
 
 ### Log In 
 
+![Screenshot 2020-05-04 at 3 49 32 PM](https://user-images.githubusercontent.com/34850576/81020991-f6dc0980-8e1e-11ea-8c77-f28d54739a57.png)
+
 ### Register
+
+![Screenshot 2020-05-04 at 3 49 25 PM](https://user-images.githubusercontent.com/34850576/81021008-ff344480-8e1e-11ea-94c3-33934b9d8f51.png)
 
 ### Menu 
 
