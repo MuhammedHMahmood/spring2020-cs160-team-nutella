@@ -56,7 +56,7 @@ We bring to consumers home cooked, authentic food made by small scale caterers o
 
 3) Where can I view dishes in my area?
 
-   On the home page, there is a button you can press to that will lead you to a page full of dishes in your area. If you have logged in,        there is a link on the top left that will take you to there.
+   On the home page, there is a link below login/register that will lead you to a page full of dishes in your area. If you're already logged in, there is a link below the cater and order buttons.
 
 4) Is Mom’s Kitchen free?
 
