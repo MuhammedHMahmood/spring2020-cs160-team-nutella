@@ -28,15 +28,22 @@ We bring to consumers home cooked, authentic food made by small scale caterers o
 
 ## Usage with screenshots
 
-Main Page
+### Main Page
 
-Log In 
+![Screenshot 2020-05-03 at 11 19 13 PM](https://user-images.githubusercontent.com/34850576/80940466-b9329e80-8d94-11ea-9bf0-a8efafe63926.png)
 
-Register
+### Log In 
 
-Menu 
+### Register
 
-User Home Page
+### Menu 
+
+![Screenshot 2020-05-03 at 11 19 18 PM](https://user-images.githubusercontent.com/34850576/80940480-bfc11600-8d94-11ea-9fc8-e4bc476582fa.png)
+
+### User Home Page
+
+![Screenshot 2020-05-03 at 11 19 41 PM](https://user-images.githubusercontent.com/34850576/80940488-c5b6f700-8d94-11ea-80d0-f196cbe713d0.png)
+
 
 ## FAQ
 1) I forgot my password, what do I do?
