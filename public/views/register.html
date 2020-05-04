@@ -1,34 +1,80 @@
 <!doctype html>
 <html>
-<head>
 
-    <meta charset="utf-8">
-    <link href="http://localhost:3000/css/style.css" rel="stylesheet">
+<head>
+  <style>
+    body {
+      background-image: url('http://localhost:3000/images/menu-bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    input[type=button],
+    input[type=submit],
+    input[type=reset] {
+      background-color: #147774;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+  </style>
+  <meta charset="utf-8">
+  <link href="http://localhost:3000/css/style.css" rel="stylesheet">
 </head>
+
 <body>
 
   <title="Sign Up">
-
-      <form class="authForms" action="/users" method="post">
-        <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter Name" name="name" required>
-
-        <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="email" required>
-
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-        <label for="address"><b>Address</b></label>
-        <input type="text" placeholder="address" name="address" required>
-
-     <input type="submit" value="Register">
-   </form>
-
-  </ion-view>
+    <div class="forms">
+      <div class="regform">
+        <form class="authForms" action="/users" method="post">
+          <div>
+            <label for="name"><b>Name</b></label>
+          </div>
+          <div>
+            <input type="text" placeholder="Enter Name" name="name" required>
+          </div>
+          <div>
+            <label for="email"><b>Email</b></label>
+          </div>
+          <div>
+            <input type="text" placeholder="Enter Email" name="email" required>
+          </div>
+          <div>
+            <label for="password"><b>Password</b></label>
+          </div>
+          <div>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+          </div>
+          <div>
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+          </div>
+          <div>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+          </div>
+          <div>
+            <label for="address"><b>Address</b></label>
+          </div>
+          <div>
+            <input type="text" placeholder="address" name="address" required>
+          </div>
+          <div>
+            <input type="submit" value="Register">
+          </div>
+        </form>
+      </div>
+    </div>
 
 </body>
+
 </html>
