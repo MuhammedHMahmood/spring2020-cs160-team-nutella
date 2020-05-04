@@ -37,7 +37,7 @@ $ npx serve
 ```
 $ npm run e2e
 ```
-
+Cypress will open in your browser and run the test automatically.
 ### Back End
 Link to the backend test cases.  
 
