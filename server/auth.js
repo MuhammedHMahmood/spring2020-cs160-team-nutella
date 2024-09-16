@@ -1,31 +1,11 @@
-var bcrypt = require('bcrypt'),
-  uuid = require('node-uuid'),
-  validator = require('validator');
+  var uuid = require('node-uuid'),
+  validator = require('validator'),
+  mongoose = require('mongoose');
 
 var user_cache = {};
 var register_callback = null;
 
-function encryptPassword(password, callback) {
-  bcrypt.genSalt(10, function(err, salt) {
-    if (err) {
-      return callback(err);
-    }
-    bcrypt.hash(password, salt, function(err, hash) {
-      return callback(err, hash);
-    });
-  });
-}
-
-function comparePassword(password, hash, callback) {
-  console.log("Comparing ", password, " to hash ", hash);
-  bcrypt.compare(password, hash, function(err, match) {
-    if (err) {
-      return callback(err);
-    } else {
-      return callback(null, match);
-    }
-  });
-}
+const User = require('../models/users')
 
 module.exports = function(models) {
   function clean_user(user) {
@@ -34,21 +14,36 @@ module.exports = function(models) {
   }
 
   function register(req, res, next) {
-    var user = req.body;
+    const user = new User({
+      Name: req.body.name,
+      Account: req.body.email,
+      Password: req.body.password,
+      Location: req.body.address,
+      Type: "Buyer"
+    });
 
-    if (!validator.isEmail(user.email)) {
+    if (!validator.isEmail(user.Account)) {
       return res.status(400).send("Invalid email address");
     }
-    if (!validator.isLength(user.name, 3)) {
+    if (!validator.isLength(user.Name, 3)) {
       return res.status(400).send("Name must be at least 3 characters");
     }
-    if (!validator.isLength(user.password, 3)) {
+    if (!validator.isLength(user.Password, 3)) {
       return res.status(400).send("Password must be at least 3 characters");
     }
 
 
     console.log("Registering ", user);
-    new models.User({
+    try {
+      user.save();
+      console.log("Runs user.save")
+      res.send(user._id);
+    } catch (err) {
+      console.log("got an error")
+      res.send(err);
+    }
+
+  /*  new models.User({
       email: user.email
     }).fetch().then(function(model) {
       if (model) {
@@ -72,12 +67,11 @@ module.exports = function(models) {
           }).catch(next);
         });
       }
-    });
+    }); */
   }
 
   function login(req, res, next) {
     var user = req.body;
-
     new models.User({
       email: user.email
     }).fetch().then(function(model) {

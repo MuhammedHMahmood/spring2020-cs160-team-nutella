@@ -2,17 +2,46 @@
 .button {
     border-radius: 3px;
     font-weight: bold;
+    background-color: black;
+}
+
+.images {
+  position: absolute;
+  left: 9%;
+}
+
+.logo {
+  margin: 65px;
 }
 
 .button.button-positive {
-    background-color: #00a1df;
-    border-color: #00a1df;
+    background-color: black;
+    border-color: black;
 }
 
 /* home screen */
 .home-content {
-    background: url(/img/splash-background.png) no-repeat;
+    background: url(/img/spices-back.jpg) no-repeat;
     background-size: cover;
+}
+
+.homeLinks {
+  border-radius: 25px;
+  position: absolute;
+  top: 30%;
+  left: 38%;
+  background-color: white;
+  height: 450px;
+  width: 400px;
+}
+
+
+.mainLogo {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .home-content > .scroll {
@@ -33,9 +62,15 @@
 }
 
 .home-content .row-buttons {
+    margin-top: 65px;
     flex-grow: 0;
 }
 
 .home-content .button:last-child {
     margin-bottom: 0;
+}
+
+.row-buttons {
+  text-align: center;
+  bottom: : 75%;
 }

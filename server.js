@@ -1,17 +1,17 @@
-var http           = require('http'),
-    config         = require('./server/config'),
-    express        = require('express'),
-    bodyParser     = require('body-parser'),
-    methodOverride = require('method-override'),
-    path           = require('path'),
-    knex           = require('knex')(config.knex_options),
-    bookshelf      = require('bookshelf')(knex),
-    models         = require('./server/models')(bookshelf),
-    notifier       = require('./server/notifier'),
-    restful        = require('./server/bookshelf_rest'),
-    auth           = require('./server/auth')(models),
-    force          = require('./server/force')
-    ;
+var http = require('http'),
+  config = require('./server/config'),
+  express = require('express'),
+  bodyParser = require('body-parser'),
+  methodOverride = require('method-override'),
+  path = require('path'),
+  knex = require('knex')(config.knex_options),
+  bookshelf = require('bookshelf')(knex),
+  models = require('./server/models')(bookshelf),
+  notifier = require('./server/notifier'),
+  restful = require('./server/bookshelf_rest'),
+  auth = require('./server/auth')(models),
+  force = require('./server/force'),
+  mongoose = require("mongoose");
 
 /********************* APP SETUP *****************************/
 
@@ -35,6 +35,21 @@ app.use(express.static(path.join(__dirname, 'client/')));
 app.use(express.static(path.join(__dirname, 'admin/')));
 app.use(express.static(path.join(__dirname, 'server/pages')));
 
+//moongodb connection
+setTimeout(function() {
+  mongoose.connect('mongodb+srv://Nutella:NutellaPass@cluster0-7zxfk.mongodb.net/test?retryWrites=true&w=majority', {
+    useNewUrlParser: true
+  }, () => console.log("success connect")) }, 60);
+
+
+var USER_COLLECTION = "Users";
+var DISH_COLLECTION = "Dishes";
+var ORDER_COLLECTION = "Orders";
+
+const route = require('./routes/route');
+app.use(route);
+
+
 // Logging
 app.use(function(req, res, next) {
   logger.debug(req.method, req.url);
@@ -49,11 +64,10 @@ app.use(function(err, req, res, next) {
 
 /********************* ROUTES *****************************/
 // Simple hack to only allow admin to load the admin page.
-app.get('/admin', auth.authenticate, auth.require_admin, function (req, res) {
+app.get('/admin', auth.authenticate, auth.require_admin, function(req, res) {
   res.set('Location', '/admin_Ypzr9fLs.html');
   return res.send('OK');
 });
-
 
 app.use('/register', auth.register);
 app.use('/login', auth.login);
